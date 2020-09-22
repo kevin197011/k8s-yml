@@ -4,7 +4,7 @@ from k8s.core.config import Config
 
 class Base(object):
 
-    cf = Config().data()
+    _cf = Config().data()
 
     def run(self):
-        Secret(**self.cf).run()
+        Secret(**self._cf).run()

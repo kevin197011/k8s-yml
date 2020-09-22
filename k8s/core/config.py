@@ -10,16 +10,16 @@ class Config(Base64):
         return yaml.unsafe_load(_context)
 
     def data(self) -> dict:
-        data = self._read()
-        secret_data = []
-        for item in data['secrets']:
+        _data = self._read()
+        _secret_data = []
+        for item in _data['secrets']:
             item_data = {}
             for file in item['data']:
                 item_data[file] = Base64().encode(file)
-            secret_data.append({
+            _secret_data.append({
                 'name': item['name'],
                 'namespace': item['namespace'],
                 'data': item_data
             })
-        data['secrets'] = secret_data
-        return data
+        _data['secrets'] = _secret_data
+        return _data
