@@ -6,13 +6,13 @@ from .base64 import Base64
 class Config(Base64):
 
 
-    def _read(self):
+    def _read(self) -> dict:
         _file = open("config/config.yml", "r")
         _context = _file.read()
         _file.close()
         return yaml.unsafe_load(_context)
 
-    def data(self):
+    def data(self) -> dict:
         data = self._read()
         secret_data = []
         for item in data['secrets']:
