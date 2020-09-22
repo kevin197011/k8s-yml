@@ -1,0 +1,18 @@
+---
+# deployments config
+deployments: []
+# services config
+services: []
+# ingress config
+ingress: []
+
+# secrets config
+secrets:
+  - name: secret-a
+    data:
+      - a1.txt
+      - a2.txt
+  - name: secret-b
+    data:
+      - b1.txt
+      - b2.txt
