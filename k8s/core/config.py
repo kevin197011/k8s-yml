@@ -16,6 +16,10 @@ class Config(Base64):
             item_data = {}
             for file in item['data']:
                 item_data[file] = Base64().encode(file)
-            secret_data.append({'name': item['name'], 'data': item_data})
+            secret_data.append({
+                'name': item['name'],
+                'namespace': item['namespace'],
+                'data': item_data
+            })
         data['secrets'] = secret_data
         return data

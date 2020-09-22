@@ -1,6 +1,6 @@
 all: l p
 
-.PHONY: l p
+.PHONY: l p f r
 
 l:
 	git pull
@@ -13,3 +13,6 @@ p:
 
 f:
 	yapf -ir .
+
+r:
+	python main.py

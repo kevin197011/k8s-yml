@@ -11,12 +11,14 @@ class Secret(object):
         _source.close()
         return _context
 
-    def _secret(self, files, name):
-        t = Template(self._read()).render(files=files, name=name)
+    def _secret(self, files, name, namespace):
+        t = Template(self._read()).render(files=files,
+                                          name=name,
+                                          namespace=namespace)
         with open(f"resources/yml/{name}-secret.yml", "w") as f:
             f.write(t)
         print(f"{name}-secret.yml generate sucess...")
 
     def run(self):
         for i in self.data:
-            self._secret(i['data'], i['name'])
+            self._secret(i['data'], i['name'], i['namespace'])

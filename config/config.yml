@@ -9,10 +9,12 @@ ingress: []
 # secrets config
 secrets:
   - name: secret-a
+    namespace: public
     data:
       - a1.txt
       - a2.txt
   - name: secret-b
+    namespace: public
     data:
       - b1.txt
       - b2.txt
