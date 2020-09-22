@@ -17,7 +17,7 @@ class Secret(object):
                                           namespace=namespace)
         with open(f"resources/yml/{name}-secret.yml", "w") as f:
             f.write(t)
-        print(f"{name}-secret.yml generate sucess...")
+        print(f"{name}-secret.yml generate sucessful...")
 
     def run(self):
         for i in self.data:
