@@ -5,7 +5,7 @@ all: l p
 l:
 	git pull
 
-p:
+p: f
 	git pull
 	git add .
 	git commit -m "Update."
