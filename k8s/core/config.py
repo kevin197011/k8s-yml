@@ -1,11 +1,8 @@
-
 import yaml
 from .base64 import Base64
 
 
 class Config(Base64):
-
-
     def _read(self) -> dict:
         _file = open("config/config.yml", "r")
         _context = _file.read()

@@ -8,4 +8,3 @@ class Base(object):
 
     def run(self):
         Secret(**self.cf).run()
-

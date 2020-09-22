@@ -1,9 +1,7 @@
 from jinja2 import Template
 
 
-
 class Secret(object):
-
     def __init__(self, **kwargs):
         self.data = kwargs['secrets']
 
@@ -22,5 +20,3 @@ class Secret(object):
     def run(self):
         for i in self.data:
             self._secret(i['data'], i['name'])
-
-        
